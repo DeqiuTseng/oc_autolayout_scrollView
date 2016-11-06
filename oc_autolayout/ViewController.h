@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewWidthConstraint;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollPageView;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @end
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xnh-2C-Gnb">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--这是导航栏-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +15,75 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVz-LF-J29">
+                                <rect key="frame" x="0.0" y="200" width="600" height="400"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFw-L7-g7Y" userLabel="contentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="xFw-L7-g7Y" firstAttribute="width" secondItem="tVz-LF-J29" secondAttribute="width" id="HYo-Gy-X7f"/>
+                                    <constraint firstAttribute="trailing" secondItem="xFw-L7-g7Y" secondAttribute="trailing" id="e5u-2z-cVV"/>
+                                    <constraint firstAttribute="bottom" secondItem="xFw-L7-g7Y" secondAttribute="bottom" id="f0N-vX-0Xm"/>
+                                    <constraint firstItem="xFw-L7-g7Y" firstAttribute="height" secondItem="tVz-LF-J29" secondAttribute="height" id="pb7-Qc-eZR"/>
+                                    <constraint firstItem="xFw-L7-g7Y" firstAttribute="leading" secondItem="tVz-LF-J29" secondAttribute="leading" id="sJh-e9-YbW"/>
+                                    <constraint firstItem="xFw-L7-g7Y" firstAttribute="top" secondItem="tVz-LF-J29" secondAttribute="top" id="sps-i3-8fL"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zN-mq-iYk">
+                                <rect key="frame" x="278" y="85" width="45" height="30"/>
+                                <state key="normal" title="下一页">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextControllerBtnAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rH9-Oo-b5G"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="7zN-mq-iYk" secondAttribute="centerX" id="Sgf-9x-lge"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="tVz-LF-J29" secondAttribute="bottom" id="cYm-9D-ZRb"/>
+                            <constraint firstItem="7zN-mq-iYk" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="21" id="mnx-LY-y1F"/>
+                            <constraint firstItem="tVz-LF-J29" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="136" id="tgu-ls-qb4"/>
+                            <constraint firstItem="tVz-LF-J29" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="tot-Y1-QoA"/>
+                            <constraint firstAttribute="trailing" secondItem="tVz-LF-J29" secondAttribute="trailing" id="uwR-3A-Bob"/>
+                            <constraint firstItem="xFw-L7-g7Y" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="yfM-lA-AUs"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="这是导航栏" id="xYg-fc-sl5"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="contentView" destination="xFw-L7-g7Y" id="ddf-iw-wUt"/>
+                        <outlet property="contentViewWidthConstraint" destination="yfM-lA-AUs" id="Pmt-Yh-fFP"/>
+                        <outlet property="scrollPageView" destination="tVz-LF-J29" id="54K-EB-wDb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1541" y="441"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RMO-uH-4rw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xnh-2C-Gnb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BWP-Vl-NiV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="sWs-6b-kuB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eO0-SQ-loW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="729" y="441"/>
         </scene>
     </scenes>
 </document>
